@@ -25,141 +25,7 @@
           <p class="delat">&#xe619;</p>
         </div>
       </div>
-      <div class="bxzy_box_shop_list">
-        <div class="bxzy_box_shop_list_img">
-          <img src="../img/banner_2.jpg">
-        </div>
-        <div class="bxzy_box_shop_list_title">
-          <p class="title">哈哈哈哈哈哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</p>
-          <span>￥222</span>
-          <div class="button">
-            <b class="button_1 re">-</b>
-            <b class="button_1 val">22</b>
-            <b class='button_1 add'>+</b>
-          </div>
-          <p class="delat">&#xe619;</p>
-        </div>
-      </div>
-      <div class="bxzy_box_shop_list">
-        <div class="bxzy_box_shop_list_img">
-          <img src="../img/banner_2.jpg">
-        </div>
-        <div class="bxzy_box_shop_list_title">
-          <p class="title">哈哈哈哈哈哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</p>
-          <span>￥222</span>
-          <div class="button">
-            <b class="button_1 re">-</b>
-            <b class="button_1 val">22</b>
-            <b class='button_1 add'>+</b>
-          </div>
-          <p class="delat">&#xe619;</p>
-        </div>
-      </div>
-      <div class="bxzy_box_shop_list">
-        <div class="bxzy_box_shop_list_img">
-          <img src="../img/banner_2.jpg">
-        </div>
-        <div class="bxzy_box_shop_list_title">
-          <p class="title">哈哈哈哈哈哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</p>
-          <span>￥222</span>
-          <div class="button">
-            <b class="button_1 re">-</b>
-            <b class="button_1 val">22</b>
-            <b class='button_1 add'>+</b>
-          </div>
-          <p class="delat">&#xe619;</p>
-        </div>
-      </div>
-      <div class="bxzy_box_shop_list">
-        <div class="bxzy_box_shop_list_img">
-          <img src="../img/banner_2.jpg">
-        </div>
-        <div class="bxzy_box_shop_list_title">
-          <p class="title">哈哈哈哈哈哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</p>
-          <span>￥222</span>
-          <div class="button">
-            <b class="button_1 re">-</b>
-            <b class="button_1 val">22</b>
-            <b class='button_1 add'>+</b>
-          </div>
-          <p class="delat">&#xe619;</p>
-        </div>
-      </div>
-      <div class="bxzy_box_shop_list">
-        <div class="bxzy_box_shop_list_img">
-          <img src="../img/banner_2.jpg">
-        </div>
-        <div class="bxzy_box_shop_list_title">
-          <p class="title">哈哈哈哈哈哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</p>
-          <span>￥222</span>
-          <div class="button">
-            <b class="button_1 re">-</b>
-            <b class="button_1 val">22</b>
-            <b class='button_1 add'>+</b>
-          </div>
-          <p class="delat">&#xe619;</p>
-        </div>
-      </div>
-      <div class="bxzy_box_shop_list">
-        <div class="bxzy_box_shop_list_img">
-          <img src="../img/banner_2.jpg">
-        </div>
-        <div class="bxzy_box_shop_list_title">
-          <p class="title">哈哈哈哈哈哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</p>
-          <span>￥222</span>
-          <div class="button">
-            <b class="button_1 re">-</b>
-            <b class="button_1 val">22</b>
-            <b class='button_1 add'>+</b>
-          </div>
-          <p class="delat">&#xe619;</p>
-        </div>
-      </div>
-      <div class="bxzy_box_shop_list">
-        <div class="bxzy_box_shop_list_img">
-          <img src="../img/banner_2.jpg">
-        </div>
-        <div class="bxzy_box_shop_list_title">
-          <p class="title">哈哈哈哈哈哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</p>
-          <span>￥222</span>
-          <div class="button">
-            <b class="button_1 re">-</b>
-            <b class="button_1 val">22</b>
-            <b class='button_1 add'>+</b>
-          </div>
-          <p class="delat">&#xe619;</p>
-        </div>
-      </div>
-      <div class="bxzy_box_shop_list">
-        <div class="bxzy_box_shop_list_img">
-          <img src="../img/banner_2.jpg">
-        </div>
-        <div class="bxzy_box_shop_list_title">
-          <p class="title">哈哈哈哈哈哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</p>
-          <span>￥222</span>
-          <div class="button">
-            <b class="button_1 re">-</b>
-            <b class="button_1 val">22</b>
-            <b class='button_1 add'>+</b>
-          </div>
-          <p class="delat">&#xe619;</p>
-        </div>
-      </div>
-      <div class="bxzy_box_shop_list">
-        <div class="bxzy_box_shop_list_img">
-          <img src="../img/banner_2.jpg">
-        </div>
-        <div class="bxzy_box_shop_list_title">
-          <p class="title">哈哈哈哈哈哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</p>
-          <span>￥222</span>
-          <div class="button">
-            <b class="button_1 re">-</b>
-            <b class="button_1 val">22</b>
-            <b class='button_1 add'>+</b>
-          </div>
-          <p class="delat">&#xe619;</p>
-        </div>
-      </div>
+
       <div class="gobuy">
        <p>总金额:<span>￥55555</span></p>
        <div class="gobuy_button">
@@ -167,11 +33,40 @@
        </div>
       </div>
     </div>
+    <div
+    v-for=" item in cart"
+    :key="item.id"
+    >
+    <input type="checkbox"  :checked='item.checked'/>
+    {{item.price}}
+    {{item.title}}
+    ${{item.count}}
+    </div>
+    <div>
+    总共{{cartTotalCount}}件商品 ， 选中{{cartCheckedCount}}多少件商品，选中商品{{cartCheckedPrice}}价格
+
+    </div>
   </div>
 </template>
 
 <script>
-export default {}
+import {
+  mapState,
+  mapGetters
+} from 'vuex'
+export default {
+  computed: {
+
+    ...mapState([
+      'cart'
+    ]),
+    ...mapGetters([
+      'cartTotalCount',
+      'cartCheckedCount',
+      'cartCheckedPrice'
+    ])
+  }
+}
 </script>
 <style>
 .cart {
