@@ -7,7 +7,7 @@
       <div class="detail-icon">&#xe61d;</div>
     </div>
     <div class="detali-body">
-      <img class="img" :src="detail.detail.image" alt>
+     <div class="img"><img  :src="detail.detail.image" alt></div>
       <div class="miaoshu">
         <div class="box-word">{{detail.detail.title}}</div>
         <div class="detail-icon">&#xe607;</div>
@@ -152,19 +152,19 @@
            <img src="../img/banner_9.jpg" alt>
         </div>
         <div class="li">
-          <!-- <img src="../images/pic2.png" alt> -->
+          <img src="../img/banner_7.jpg" alt>>
         </div>
         <div class="li">
-          <!-- <img src="../images/pic.png" alt> -->
+          <img src="../img/banner_8.jpg" alt>
         </div>
         <div class="li">
-          <!-- <img src="../images/pic3.png" alt> -->
+          <img src="../img/banner_9.jpg" alt>
         </div>
         <div class="li">
-          <!-- <img src="../images/pic.png" alt> -->
+           <img src="../img/banner_19.jpg" alt>
         </div>
         <div class="li">
-          <!-- <img src="../images/pic2.png" alt> -->
+           <img src="../img/banner_4.jpg" alt>
         </div>
       </div>
     </div>
@@ -172,7 +172,7 @@
      上拉查看图文详情
     </div>
     <div class="detail-pic" v-for="banner in banners" :key="banner.id">
-          <img :src="detail.detail.image" alt="">
+          <img :src="banner.url" alt="">
     </div>
     <div class="detail-footer">
       <div>
@@ -191,7 +191,6 @@ export default {
     return {
       detail: {},
       banners: []
-
     }
   },
 
@@ -201,11 +200,11 @@ export default {
         .then(resp => {
           if (resp.data.code === 200) {
             vm.detail = resp.data.data
-            vm.banners = vm.detail
+            vm.banners = vm.detail.detail.photos
             // console.log(resp)
 
             console.log(vm.detail)
-            console.log(vm.detail.detail.image)
+            console.log(vm.detail.detail.photos)
           }
         })
     })
@@ -248,8 +247,13 @@ export default {
   overflow-x: hidden;
   .img {
 
-    height: 70%;
+    height: 60%;
+
     width: 100%;
+    img{
+      width: 100%;
+      height: 100%;
+    }
   }
   .miaoshu {
     height: 4rem;
@@ -463,16 +467,15 @@ export default {
   height: 2rem;
 }
 .ul {
-  height: 10rem;
-  overflow-y: hidden;
+  height:10rem;
+  overflow-y:hidden;
   width: 100%;
   white-space: nowrap;
 
   .li {
-    width: 23%;
     display: inline-block;
+    width: 30%;
     height: 100%;
-
     img {
       width: 80%;
       height: 7rem;
@@ -497,6 +500,7 @@ color:#6666;
 
   }
 .detail-footer {
+
   height: 3.3rem;
   display: flex;
   flex-direction: row;
