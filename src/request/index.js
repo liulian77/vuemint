@@ -19,3 +19,16 @@ export const bxbanner = () => {
 export const bxchange = () => {
   return ajax.get('/api/tab/3?start=0')
 }
+export const getCateNav = () => {
+  return ajax.get('/api/tabs?sa=')
+}
+export const getProducts = (tabid) => {
+  return ajax.get(`/api/tab/${tabid}?start=0`)
+}
+export const getList = (id) => {
+  return ajax.get(`/api/category/${id}/items?start=0&sort=0`)
+}
+// 获取商品详情
+export const getDetail = () => {
+  return ajax.get(`/api/detail?id=10324636&normal=1&sa=`)
+}
