@@ -22,5 +22,21 @@ export default new Vuex.Store({
       count: 10,
       checked: true
     } ]
+  },
+  getters: {
+    cartTotalCount (state) {
+      return state.cart
+        .reduce((res, currcount) => {
+          res += currcount.count
+          return res
+        }, 0)
+    },
+    cartCheckedCount (state) {
+      return state.cart.filter(item => item.checked === true)
+        .reduce((res, currcount) => {
+          res += currcount.count
+          return res
+        }, 0)
+    }
   }
 })
