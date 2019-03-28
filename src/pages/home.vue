@@ -291,6 +291,7 @@ export default {
     }
   },
   created () {
+    console.log(this)
     this.$ajax
       .bxbanner()
       .then(resp => {

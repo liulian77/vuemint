@@ -167,11 +167,32 @@
        </div>
       </div>
     </div>
+    <div
+    v-for=" item in cart"
+    :key="item.id"
+    >
+    <input type="checkbox"  :checked='item.checked'/>
+    {{item.price}}
+    {{item.title}}
+    ${{item.count}}
+    </div>
+    <div>
+    总共多少件商品  ， 共计价格，选中商品价格
+
+    </div>
   </div>
 </template>
 
 <script>
-export default {}
+import {mapState} from 'vuex'
+export default {
+  computed: {
+
+    ...mapState([
+      'cart'
+    ])
+  }
+}
 </script>
 <style>
 .cart {
