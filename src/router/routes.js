@@ -28,7 +28,7 @@ const list = () =>
 const productlist = () =>
     import('@/pages/productlist')
 
-const register = () => ('@/pages/register')
+const register = () => import('@/pages/register')
 
 export default [{
   path: '/',
@@ -98,8 +98,8 @@ export default [{
   path: '/list/:id',
   name: 'list',
   components: {
-    default: list
-
+    default: list,
+    tabber: Tabbar
   }
 }, {
   path: '/login',

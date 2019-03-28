@@ -26,7 +26,9 @@
                      @click.stop="addToCart({
                         id: curr.id,
                         title: curr.title,
-                        price: curr.price
+                        price: curr.price,
+                        img:curr.image,
+
                       })"
                     ></i>
                     </div>
