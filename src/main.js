@@ -6,6 +6,10 @@ import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
 import router from './router'
 import * as ajax from './request'
+
+import './font/iconfont.css'
+import store from './store'
+
 Vue.prototype.$ajax = ajax
 Vue.use(MintUI)
 Vue.config.productionTip = false
@@ -14,6 +18,7 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })
