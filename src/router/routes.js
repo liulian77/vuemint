@@ -8,17 +8,16 @@
 import Tabbar from '@/components/bxtabbar'
 import Search from '@/pages/search'
 import Header from '@/components/bxheader'
-const detail = () => '@/pages/detail'
-const login = () => '@/pages/login'
+const detail = () => import('@/pages/detail')
+const login = () => import('@/pages/login')
 const Home = () => import('@/pages/home')
 const Cart = () => import('@/pages/cart')
 const Main = () => import('@/pages/mine')
-const Product = () => import('@/pages/product')
 const Notfont = () => import('@/pages/Notfont')
 const mall = () => import('@/pages/mall')
 const list = () => import('@/pages/list')
 const productlist = () => import('@/pages/productlist')
-const register = () => '@/pages/register'
+const register = () => ('@/pages/register')
 
 export default [{
   path: '/',
@@ -38,7 +37,7 @@ export default [{
 {
   path: '/mall',
   isTabbar: true,
-  title: '商城',
+  title: '分类',
   icon: '&#xe635;',
   components: {
     default: mall,
@@ -47,7 +46,7 @@ export default [{
   },
   children: [{
     path: ':id',
-    name: 'productlist',
+    name: 'category',
     components: {
       default: productlist
     }
@@ -55,7 +54,6 @@ export default [{
 }, {
   path: '*',
   redirect: '/404'
-
 }, {
   path: '/404',
   components: {
@@ -81,12 +79,6 @@ export default [{
     tabber: Tabbar
   }
 }, {
-  path: '/product/:id',
-  name: 'product',
-  components: {
-    default: Product
-  }
-}, {
   path: '/search',
   name: 'search',
   components: {
@@ -94,7 +86,7 @@ export default [{
   }
 }, {
   path: '/list/:id',
-
+  name: 'list',
   components: {
     default: list
 
@@ -103,7 +95,6 @@ export default [{
   path: '/login',
   components: {
     default: login
-
   }
 },
 
@@ -111,7 +102,6 @@ export default [{
   path: '/register',
   components: {
     default: register
-
   }
 },
 {
