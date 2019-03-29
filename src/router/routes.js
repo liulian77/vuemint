@@ -8,6 +8,28 @@
 import Tabbar from '@/components/bxtabbar'
 import Search from '@/pages/search'
 import Header from '@/components/bxheader'
+<<<<<<< HEAD
+
+const detail = () =>
+    import('@/pages/detail')
+const login = () =>
+    import('@/pages/login')
+const Home = () =>
+    import('@/pages/home')
+const Cart = () =>
+    import('@/pages/cart')
+const Main = () =>
+    import('@/pages/mine')
+const Notfont = () =>
+    import('@/pages/Notfont')
+const mall = () =>
+    import('@/pages/mall')
+const list = () =>
+    import('@/pages/list')
+const productlist = () =>
+    import('@/pages/productlist')
+
+=======
 const detail = () => import('@/pages/detail')
 const login = () => import('@/pages/login')
 const Home = () => import('@/pages/home')
@@ -17,6 +39,7 @@ const Notfont = () => import('@/pages/Notfont')
 const mall = () => import('@/pages/mall')
 const list = () => import('@/pages/list')
 const productlist = () => import('@/pages/productlist')
+>>>>>>> 557efd14c8a88648b1d7427f1094502775394876
 const register = () => import('@/pages/register')
 
 export default [{
@@ -93,8 +116,8 @@ export default [{
   path: '/list/:id',
   name: 'list',
   components: {
-    default: list
-
+    default: list,
+    tabber: Tabbar
   }
 }, {
   path: '/login',

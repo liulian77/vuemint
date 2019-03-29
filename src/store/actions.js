@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+export default{
+
+  deletCartItemAsync (store, id) {
+    setTimeout(() => {
+      // 不能在这里直接修改state，需要使用store.commit('方法名':参数)
+      store.commit('deletCartItem', id)
+    }, 300)
+  }
+
+=======
 import {postLogin} from '@/request'
 export default{
   // 这是一个异步的请求，所以要在actions是
@@ -11,4 +22,5 @@ export default{
       }
     })
   }
+>>>>>>> 557efd14c8a88648b1d7427f1094502775394876
 }
