@@ -28,7 +28,6 @@
                         title: curr.title,
                         price: curr.price,
                         img:curr.image,
-
                       })"
                     ></i>
                     </div>

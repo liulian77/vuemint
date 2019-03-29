@@ -16,6 +16,13 @@ Vue.prototype.$ajax = ajax
 Vue.use(MintUI)
 Vue.config.productionTip = false
 
+Vue.mixin({
+  filters: {
+    num (n) {
+      return n > 99 ? '99+' : n
+    }
+  }
+})
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

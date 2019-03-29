@@ -1,11 +1,16 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-
 Vue.use(Vuex)
+const anys = (store) => {
+  store.subscribe((mutation, state) => {
+    window.localStorage.setItem('bx', JSON.stringify(state.cart) || [])
+  })
+}
 export default new Vuex.Store({
   state: {
-    cart: []
+    cart: JSON.parse(window.localStorage.getItem('bx'))
   },
+  plugins: [anys],
   getters: {
     cartTotalCount (state) {
       return state.cart
@@ -34,6 +39,7 @@ export default new Vuex.Store({
 
   },
   mutations: {
+
     // 只能在这里修改state
     deletCartItem (state, id) {
       state.cart = state.cart.filter(item => item.id !== id)
@@ -47,7 +53,36 @@ export default new Vuex.Store({
       })
     },
 
+    // handleRemove (state, count) {
+    //   console.log(state)
+    //   state.cart = state.cart.map(item => {
+    //     console.log(item)
+    //     if (item.id === count) {
+    //       item.count = item.count - 1
+    //     }
+    //     return item
+    //   })
+    // },
+    handleRemove (state, id) {
+      state.cart = state.cart.map(item => {
+        if (item.id === id && item.count !== 1) {
+          item.count--
+        }
+        return item
+      })
+    },
+    handleAdd (state, id) {
+      state.cart = state.cart.map(item => {
+        if (item.id === id && item.count !== 999) {
+          item.count = item.count + 1
+        }
+        return item
+      })
+    },
     togoAllchecked (state, checked) {
+      console.log(state)
+      // const CartLength = state.cart.length
+      console.log(state.cart.length)
       state.cart = state.cart.map(item => {
         item.checked = checked
         return item
@@ -78,8 +113,7 @@ export default new Vuex.Store({
       setTimeout(() => {
         // 不能在这里直接修改state，需要使用store.commit('方法名':参数)
         store.commit('deletCartItem', id)
-      }, 1000)
+      }, 300)
     }
   }
-
 })

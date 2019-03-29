@@ -1,5 +1,6 @@
 <template>
   <div class="cart">
+
     <mt-header title="购物车">
       <router-link to="/" slot="left">
         <mt-button icon="back"></mt-button>
@@ -8,8 +9,11 @@
     <div class="bxzy_box">
       <div class="bxzy">白熊自营</div>
     </div>
-
-    <div class="bxzy_box_shop">
+    <div class="noshop"  v-if="cart.length === 0">
+<p>你还没有商品哦</p>
+<router-link to="home" class="gotoshop">快去逛逛吧</router-link>
+</div>
+    <div class="bxzy_box_shop" >
 
       <div class="bxzy_box_shop_list"   v-for=" item in cart"
     :key="item.id">
@@ -25,9 +29,9 @@
           <p class="title">{{item.title}}</p>
           <span>￥{{item.price}}</span>
           <div class="button">
-            <b class="button_1 re" @click="handleRemove(item.count)">-</b>
+            <b class="button_1 re" @click="handleRemove(item.id)">-</b>
             <b class="button_1 val">{{item.count}}</b>
-            <b class='button_1 add'>+</b>
+            <b class='button_1 add' @click="handleAdd(item.id)">+</b>
           </div>
           <p class="delat" @click='deletCartItemAsync(item.id)'>&#xe619;</p>
         </div>
@@ -38,7 +42,7 @@
     type="checkbox"
     :checked='isAllChecked'
     >{{isAllChecked ? '取消全选':"全选"}} <span><b>免邮</b>本单已免运费</span></div>
-      <div class="gobuy">
+      <div class="gobuy" v-if="cart.length !== 0">
        <p>总金额: <span>￥{{cartCheckedPrice.toFixed(2)}}</span></p>
        <div class="gobuy_button">
  结算
@@ -48,6 +52,7 @@
 
     </div>
     </div>
+
     <!-- <div
     v-for=" item in cart"
     :key="item.id"
@@ -70,6 +75,7 @@
     总共{{cartTotalCount}}件商品 ， 选中{{cartCheckedCount}}多少件商品，,选中商品{{cartCheckedPrice}}价格
 
     </div> -->
+
   </div>
 </template>
 
@@ -81,6 +87,10 @@ import {
   mapActions
 } from 'vuex'
 export default {
+  created () {
+    console.log(this.cart)
+  },
+
   computed: {
     ...mapState([
       'cart'
@@ -93,11 +103,14 @@ export default {
     ])
   },
   methods: {
+
     ...mapMutations([
       'deletCartItem',
       'togochecked',
       'togoAllchecked',
-      'handleRemove'
+      'handleRemove',
+      'handleAdd'
+
     ]),
     ...mapActions([
       'deletCartItemAsync'
@@ -264,7 +277,26 @@ background-color: #ffffff;
   width: 100%;
   background: #ffffff;
 }
-
+.noshop{
+  width: 100%;
+  height: 40rem;
+  font-size: 3rem;
+  text-align: center;
+  padding-top: 15rem;
+}
+.noshop p{
+  padding-bottom: 2rem;
+}
+.noshop .gotoshop{
+  background-color: red;
+  text-decoration: none;
+  display: inline;
+  color: #efefef;
+  border-radius: 10px;
+  font-size: 3rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
 @font-face {
   font-family: "iconfont"; /* project id 1105026 */
   src: url("//at.alicdn.com/t/font_1105026_ya3h6xfbac.eot");
