@@ -2,8 +2,9 @@
     <div class="list">
         <div class="header">
            <div class="head">
-                <i class="iconfont icon-fanhui"></i>
-                <span>时尚套装</span>
+               <router-link to="/mall" slot="left">
+                <i class="iconfont icon-fanhui"></i> </router-link>
+                <span>商品列表</span>
            </div>
             <div class="select">
                 <p><i class="iconfont icon-duihuan"></i>价格</p>
@@ -40,28 +41,18 @@
 </template>
 
 <script>
-import {
-  mapMutations
-} from 'vuex'
 export default {
   data () {
     return {
       products: []
     }
   },
-  methods: {
-    ...mapMutations([
-      'addToCart'
-    ])
-  },
   beforeRouteEnter (to, from, next) {
     next(vm => {
       vm.$ajax.getList(to.params.id)
         .then(resp => {
-          console.log(resp)
           if (resp.data.code === 200) {
             vm.products = resp.data.data.items.list
-            console.log(vm.products)
           }
         })
     })

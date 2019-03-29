@@ -33,28 +33,38 @@ export default {
           id
         }
       })
-    }
-  },
-  beforeRouteEnter (to, from, next) {
-    next(vm => {
-      vm.$ajax.getCateNav()
+    },
+    redirectToCategory () {
+      this.$ajax.getCateNav()
         .then(resp => {
           if (resp.data.code === 200) {
-            const hasId = Boolean(to.params.id)
-            vm.category = resp.data.data.list.slice(1)
-            vm.currentId = hasId
-              ? Number(to.params.id)
+            const hasId = Boolean(this.$route.params.id)
+            this.category = resp.data.data.list.slice(1)
+            this.currentId = hasId
+              ? Number(this.$route.params.id)
               : resp.data.data.list[1].id
-            vm.$nextTick(() => {
-              vm.$router.push({
+            this.$nextTick(() => {
+              this.$router.push({
                 name: 'category',
                 params: {
-                  id: vm.currentId
+                  id: this.currentId
                 }
               })
             })
           }
         })
+    }
+  },
+  beforeRouteUpdate (to, from, next) {
+    if (to.path === '/mall') {
+      this.redirectToCategory()
+    } else {
+      next()
+    }
+  },
+  beforeRouteEnter (to, from, next) {
+    next(vm => {
+      vm.redirectToCategory()
     })
   }
 }
@@ -67,7 +77,7 @@ export default {
     .cate-list{
         width: 7.5rem;
          overflow-x: hidden;
-       background-color: rgb(245, 215, 219);
+       background-color:#ffeeee;
         font-size: 1.4rem;
         li{
             height: 4.5rem;
@@ -76,8 +86,8 @@ export default {
              color: #666;
              text-align: center;
              &.current {
-                    border-left:1px solid #F00;
-                    color: #F00;
+                    border-left:1px solid #ece5e5;
+                    background-color:#f8f4f4;
               }
         }
     }

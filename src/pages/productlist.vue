@@ -10,6 +10,10 @@
                     id:curr.url.split('=').pop()
                 }
             }"
+            @click.stop="changeTiltle({
+              id:curr.id,
+              title: curr.title
+                      })"
              v-for="curr in products" :key="curr.id"
              >
                 <img :src="curr.imageUrl" alt="">
@@ -20,11 +24,19 @@
 </template>
 
 <script>
+import {
+  mapMutations
+} from 'vuex'
 export default {
   data () {
     return {
       products: []
     }
+  },
+  methods: {
+    ...mapMutations([
+      'changeTiltle'
+    ])
   },
   beforeRouteEnter (to, from, next) {
     next(vm => {

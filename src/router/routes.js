@@ -8,17 +8,6 @@
 import Tabbar from '@/components/bxtabbar'
 import Search from '@/pages/search'
 import Header from '@/components/bxheader'
-<<<<<<< HEAD
-const detail = () => import('@/pages/detail')
-const login = () => import('@/pages/login')
-const Home = () => import('@/pages/home')
-const Cart = () => import('@/pages/cart')
-const Main = () => import('@/pages/mine')
-const Notfont = () => import('@/pages/Notfont')
-const mall = () => import('@/pages/mall')
-const list = () => import('@/pages/list')
-const productlist = () => import('@/pages/productlist')
-=======
 const detail = () =>
     import('@/pages/detail')
 const login = () =>
@@ -37,8 +26,8 @@ const list = () =>
     import('@/pages/list')
 const productlist = () =>
     import('@/pages/productlist')
->>>>>>> 8ca2a3631c67d22db84cfd2a1cfcdd38063478c4
-const register = () => ('@/pages/register')
+const register = () =>
+    import('@/pages/register')
 
 export default [{
   path: '/',

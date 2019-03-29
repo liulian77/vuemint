@@ -35,7 +35,8 @@ font-size: 62.5%;
     list-style: none;
     &item {
         &.current{
-          background-color: #cccccc
+          background-color: #f7e7e7;
+          color:  #e28080;
         }
       flex: 1;
       text-align: center;
