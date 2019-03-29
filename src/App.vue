@@ -3,7 +3,8 @@
 
    <!-- <BxHeader/> -->
 <router-view  name='header'/>
-    <div class="bxcenter"><router-view/>
+    <div class="bxcenter">
+      <router-view/>
     </div>
   <router-view :tabs='tabs' name='tabber'/>
   </div>

@@ -17,7 +17,12 @@
               <router-link
                 tag="li"
                 class="list-li"
-                to="detail"
+               :to="{
+                name:'detail',
+                params:{
+                    id:curr.id
+                }
+            }"
                   v-for="curr in products" :key="curr.id">
                      <img :src="curr.image" alt="">
                     <p class="title-li">{{curr.title}}</p>
@@ -53,6 +58,10 @@ export default {
         .then(resp => {
           if (resp.data.code === 200) {
             vm.products = resp.data.data.items.list
+<<<<<<< HEAD
+=======
+            console.log(vm.products[0].id)
+>>>>>>> 557efd14c8a88648b1d7427f1094502775394876
           }
         })
     })

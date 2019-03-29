@@ -8,6 +8,7 @@
 import Tabbar from '@/components/bxtabbar'
 import Search from '@/pages/search'
 import Header from '@/components/bxheader'
+<<<<<<< HEAD
 const detail = () =>
     import('@/pages/detail')
 const login = () =>
@@ -28,11 +29,22 @@ const productlist = () =>
     import('@/pages/productlist')
 const register = () =>
     import('@/pages/register')
+=======
+const detail = () => import('@/pages/detail')
+const login = () => import('@/pages/login')
+const Home = () => import('@/pages/home')
+const Cart = () => import('@/pages/cart')
+const Main = () => import('@/pages/mine')
+const Notfont = () => import('@/pages/Notfont')
+const mall = () => import('@/pages/mall')
+const list = () => import('@/pages/list')
+const productlist = () => import('@/pages/productlist')
+const register = () => import('@/pages/register')
+>>>>>>> 557efd14c8a88648b1d7427f1094502775394876
 
 export default [{
   path: '/',
   redirect: '/home'
-
 }, {
   path: '/home',
   isTabbar: true,
@@ -72,6 +84,7 @@ export default [{
   }
 }, {
   path: '/cart',
+  name: 'cart',
   title: '购物车',
   icon: '&#xe61b;',
   isTabbar: true,
@@ -87,8 +100,13 @@ export default [{
   components: {
     default: Main,
     tabber: Tabbar
+  },
+  meta: {
+    isRequeires: true
   }
-}, {
+},
+
+{
   path: '/search',
   name: 'search',
   components: {
