@@ -1,6 +1,19 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import state from './state'
+import getters from './getters'
+import mutations from './mutations'
+import actions from './actions'
+
+// Vue.use(Vuex)
+// export default new Vuex.Store({
+//   state: {
+//     n: 1
+//   }
+// })
+
 Vue.use(Vuex)
+<<<<<<< HEAD
 const anys = (store) => {
   store.subscribe((mutation, state) => {
     window.localStorage.setItem('bx', JSON.stringify(state.cart) || [])
@@ -116,4 +129,20 @@ export default new Vuex.Store({
       }, 300)
     }
   }
+=======
+const asyncStorgage = (store) => {
+  store.subscribe((mutation, state) => {
+    // 每次 mutation 之后调用
+    // window.localStorage.setItem('nb-cart', JSON.stringify(state.cart))
+    window.localStorage.setItem('nb-userInfo', JSON.stringify(state.uesr))
+  })
+}
+export default new Vuex.Store({
+  strict: true,
+  plugins: [asyncStorgage],
+  state,
+  getters,
+  mutations,
+  actions
+>>>>>>> 557efd14c8a88648b1d7427f1094502775394876
 })

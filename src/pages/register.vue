@@ -1,5 +1,5 @@
 <template>
-    <div>
+  <div>
 
           <div class="register">
             <span class="exit">&lt;</span>

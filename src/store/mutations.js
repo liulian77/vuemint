@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import types from './types'
 export default{
 
@@ -69,4 +70,13 @@ export default{
     }
   }
 
+=======
+// import types from './types'
+// updataUser请求过去
+export default {
+// 更新用户信息
+  updateUserInfo (state, uesr) {
+    state.uesr = uesr
+  }
+>>>>>>> 557efd14c8a88648b1d7427f1094502775394876
 }

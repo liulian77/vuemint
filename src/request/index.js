@@ -31,6 +31,13 @@ export const getList = (id) => {
 }
 
 // 获取商品详情
-export const getDetail = () => {
-  return ajax.get(`/api/detail?id=10324636&normal=1&sa=`)
+export const getDetail = (id) => {
+  return ajax.get(`/api/detail?id=${id}&normal=1&sa=`)
+}
+// 登录
+// export const getuser = (loginInfo) => {
+//   return ajax.post(`http://rap2api.taobao.org/app/mock/163697/login`, loginInfo)
+// }
+export const postLogin = (loginInfo) => {
+  return ajax.post('http://rap2api.taobao.org/app/mock/163597/login', loginInfo)
 }
