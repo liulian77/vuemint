@@ -33,3 +33,10 @@ export const getList = (id) => {
 export const getDetail = (id) => {
   return ajax.get(`/api/detail?id=${id}&normal=1&sa=`)
 }
+// 登录
+// export const getuser = (loginInfo) => {
+//   return ajax.post(`http://rap2api.taobao.org/app/mock/163697/login`, loginInfo)
+// }
+export const postLogin = (loginInfo) => {
+  return ajax.post('http://rap2api.taobao.org/app/mock/163597/login', loginInfo)
+}

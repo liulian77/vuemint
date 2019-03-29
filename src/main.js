@@ -12,7 +12,37 @@ import store from './store'
 
 Vue.prototype.$ajax = ajax
 Vue.use(MintUI)
-Vue.config.productionTip = false
+
+// router.beforeEach((to, from, next) => {
+//   const firstLevelRoute = to.path.split('/')[1]
+//   switch (firstLevelRoute) {
+//     case 'home':
+
+//       break
+//     case 'mall':
+
+//       break
+//     case 'cart':
+
+//       break
+//     case 'mine':
+
+//       break
+//     default:
+
+//       break
+//   }
+
+//   console.log(to)
+//   console.log(store.getters.islogin)
+
+//   if (to.meta.isRequeires && store.getters.islogin) {
+//     next('/login')
+//   } else {
+//     // 如果没有权限 或者说有权限已经登录，就直接访问
+//     next()
+//   }
+// })
 
 /* eslint-disable no-new */
 new Vue({

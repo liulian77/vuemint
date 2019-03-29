@@ -1,13 +1,15 @@
 
 <template>
   <div class="detail">
-     <div class="detail-title">
-      <div class="detail-icon">&#xe61e;</div>
+    <div class="detail-title">
+     <router-link to="/mall" tag="div" class="detail-icon">&lt;</router-link>
       <div class="biaoti">{{detail.detail.title}}</div>
       <div class="detail-icon">&#xe61d;</div>
     </div>
     <div class="detali-body">
-     <div class="img"><img  :src="detail.detail.image" alt></div>
+      <div class="img">
+        <img :src="detail.detail.image" alt>
+      </div>
       <div class="miaoshu">
         <div class="box-word">{{detail.detail.title}}</div>
         <div class="detail-icon">&#xe607;</div>
@@ -77,8 +79,7 @@
             <div class="xiao-product">货号：</div>
             <div class="xiao-product1">{{detail.detail.id}}</div>
           </div>
-          <router-link to="/" class="more"> 查看玉兰油更多商品</router-link>
-
+          <router-link to="/" class="more">查看玉兰油更多商品</router-link>
         </div>
       </div>
       <div class="throung"></div>
@@ -142,47 +143,53 @@
         </div>
         <div class="li">
           <img src="../img/banner_4.jpg" alt>
-        <div class="li">
-          <img src="../img/banner_7.jpg" alt>
-        </div>
-        <div class="li">
-          <img src="../img/banner_6.jpg" alt>
-        </div>
-        <div class="li">
-           <img src="../img/banner_9.jpg" alt>
-        </div>
-        <div class="li">
-          <img src="../img/banner_7.jpg" alt>>
-        </div>
-        <div class="li">
-          <img src="../img/banner_8.jpg" alt>
-        </div>
-        <div class="li">
-          <img src="../img/banner_9.jpg" alt>
-        </div>
-        <div class="li">
-           <img src="../img/banner_19.jpg" alt>
-        </div>
-        <div class="li">
-           <img src="../img/banner_4.jpg" alt>
+          <div class="li">
+            <img src="../img/banner_7.jpg" alt>
+          </div>
+          <div class="li">
+            <img src="../img/banner_6.jpg" alt>
+          </div>
+          <div class="li">
+            <img src="../img/banner_9.jpg" alt>
+          </div>
+          <div class="li">
+            <img src="../img/banner_7.jpg" alt>>
+          </div>
+          <div class="li">
+            <img src="../img/banner_8.jpg" alt>
+          </div>
+          <div class="li">
+            <img src="../img/banner_9.jpg" alt>
+          </div>
+          <div class="li">
+            <img src="../img/banner_19.jpg" alt>
+          </div>
+          <div class="li">
+            <img src="../img/banner_4.jpg" alt>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="scorll">
-     上拉查看图文详情
-    </div>
-    <div class="detail-pic" v-for="banner in banners" :key="banner.id">
-          <img :src="banner.url" alt="">
+      <div class="scorll">上拉查看图文详情</div>
+      <div class="detail-pic" v-for="banner in banners" :key="banner.id">
+        <img :src="banner.url" alt>
+      </div>
     </div>
     <div class="detail-footer">
       <div>
         <i>&#xe606;</i>
       </div>
-      <router-link to="" id="addtocar">加入购物车</router-link>
+      <router-link  :to="{
+                name:'cart',
+                params:{
+                    id:detail.detail.id,
+                    title:detail.detail.shop.title,
+                    amount:1,
+                    price:detail.detail.price,
+                }
+            }"
+      id="addtocar">加入购物车</router-link>
     </div>
-    <router-view></router-view>
-    </div>
- </div>
+  </div>
 </template>
 
 <script>
@@ -196,17 +203,16 @@ export default {
 
   beforeRouteEnter (to, from, next) {
     next(vm => {
-      vm.$ajax.getDetail(to.params.id)
-        .then(resp => {
-          if (resp.data.code === 200) {
-            vm.detail = resp.data.data
-            vm.banners = vm.detail.detail.photos
-            // console.log(resp)
+      vm.$ajax.getDetail(to.params.id).then(resp => {
+        if (resp.data.code === 200) {
+          vm.detail = resp.data.data
+          vm.banners = vm.detail.detail.photos
+          // console.log(resp)
 
-            console.log(vm.detail)
-            console.log(vm.detail.detail.photos)
-          }
-        })
+          // console.log(vm.detail)
+          console.log(vm.detail.detail.id)
+        }
+      })
     })
   }
 }
@@ -229,14 +235,13 @@ export default {
     line-height: 3.2rem;
     font-size: 1.5rem;
   }
-  .biaoti{
-    width:60%;
+  .biaoti {
+    width: 60%;
     height: 100%;
     margin-left: 10%;
     white-space: nowrap;
     overflow: hidden;
-    text-overflow:ellipsis;
-
+    text-overflow: ellipsis;
   }
   .detail-icon {
     font-family: "iconfont";
@@ -246,11 +251,10 @@ export default {
   flex: 1;
   overflow-x: hidden;
   .img {
-
     height: 60%;
 
     width: 100%;
-    img{
+    img {
       width: 100%;
       height: 100%;
     }
@@ -304,18 +308,18 @@ export default {
   }
 }
 .flower {
-  height: 6rem;
+  height: 9rem;
   div {
     width: 90%;
     margin-left: 1.2rem;
     border-bottom: 1px solid #cdcdcd;
-    height: 3rem;
-    line-height: 3rem;
+    height: 4.5rem;
+    line-height: rem;
     font-size: 1.3rem;
     span {
       display: block;
       float: left;
-      height: 2rem;
+      height: 3rem;
       width: 4rem;
       text-align: center;
       line-height: 2rem;
@@ -404,7 +408,7 @@ export default {
     margin-left: 30%;
     font-size: 1.4rem;
     text-align: center;
-   text-decoration: none;
+    text-decoration: none;
     margin-bottom: 1.5rem;
     line-height: 2.4rem;
   }
@@ -467,8 +471,8 @@ export default {
   height: 2rem;
 }
 .ul {
-  height:10rem;
-  overflow-y:hidden;
+  height: 10rem;
+  overflow-y: hidden;
   width: 100%;
   white-space: nowrap;
 
@@ -482,25 +486,21 @@ export default {
     }
   }
 }
-.scorll{
+.scorll {
   height: 4rem;
   text-align: center;
-line-height: 4rem;
-font-size: 1.4rem;
-color:#6666;
+  line-height: 4rem;
+  font-size: 1.4rem;
+  color: #6666;
 }
-.detail-pic{
-
-    padding: 1.5rem;
-    img{
-      width: 100%;
-      height: 100%;
-
-    }
-
+.detail-pic {
+  padding: 1.5rem;
+  img {
+    width: 100%;
+    height: 100%;
   }
+}
 .detail-footer {
-
   height: 3.3rem;
   display: flex;
   flex-direction: row;
@@ -508,8 +508,8 @@ color:#6666;
   font-size: 1.3rem;
   div i {
     font-family: "iconfont";
-    font-size: 1.5rem;
-    color:#e6618e;
+    font-size: 2.5rem !important;
+    color: #e6618e;
   }
 
   #addtocar {

@@ -62,6 +62,7 @@ export default [{
   }
 }, {
   path: '/cart',
+  name: 'cart',
   title: '购物车',
   icon: '&#xe61b;',
   isTabbar: true,
@@ -77,8 +78,13 @@ export default [{
   components: {
     default: Main,
     tabber: Tabbar
+  },
+  meta: {
+    isRequeires: true
   }
-}, {
+},
+
+{
   path: '/search',
   name: 'search',
   components: {

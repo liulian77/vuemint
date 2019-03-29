@@ -22,7 +22,6 @@
                     id:curr.id
                 }
             }"
-
                   v-for="curr in products" :key="curr.id">
                      <img :src="curr.image" alt="">
                     <p class="title-li">{{curr.title}}</p>
