@@ -1,10 +1,4 @@
 <template>
-<<<<<<< HEAD
-
-<div>
-
-</div>
-=======
     <div class="mine">
         <div class="header">
             <i class="iconfont icon-icon26"></i>
@@ -86,19 +80,10 @@
             </router-link>
         </div>
     </div>
->>>>>>> 8ca2a3631c67d22db84cfd2a1cfcdd38063478c4
 </template>
 
 <script>
 export default {
-<<<<<<< HEAD
-
-}
-</script>
-
-<style>
-
-=======
   name: 'mine'
 }
 </script>
@@ -199,5 +184,4 @@ export default {
         }
     }
 }
->>>>>>> 8ca2a3631c67d22db84cfd2a1cfcdd38063478c4
 </style>

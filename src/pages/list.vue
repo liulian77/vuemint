@@ -16,7 +16,12 @@
               <router-link
                 tag="li"
                 class="list-li"
-                to="detail"
+               :to="{
+                name:'detail',
+                params:{
+                    id:curr.id
+                }
+            }"
                   v-for="curr in products" :key="curr.id">
                      <img :src="curr.image" alt="">
                     <p class="title-li">{{curr.title}}</p>
@@ -61,7 +66,7 @@ export default {
           console.log(resp)
           if (resp.data.code === 200) {
             vm.products = resp.data.data.items.list
-            console.log(vm.products)
+            console.log(vm.products[0].id)
           }
         })
     })

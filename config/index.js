@@ -14,6 +14,9 @@ module.exports = {
       '/api':{
         target: 'http://www.xiongmaoyouxuan.com'
       }
+      // '/app':{
+      //   target: 'http://rap2api.taobao.org'
+      // }
     },
 
     // Various Dev Server settings
