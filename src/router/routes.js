@@ -9,6 +9,10 @@ import Tabbar from '@/components/bxtabbar'
 import Search from '@/pages/search'
 import Header from '@/components/bxheader'
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> b0e1962e90a7d1ed38e79ca03fac8c9bcc240fef
 const detail = () =>
     import('@/pages/detail')
 const login = () =>
@@ -27,8 +31,12 @@ const list = () =>
     import('@/pages/list')
 const productlist = () =>
     import('@/pages/productlist')
+<<<<<<< HEAD
 const register = () =>
     import('@/pages/register')
+=======
+
+>>>>>>> b0e1962e90a7d1ed38e79ca03fac8c9bcc240fef
 =======
 const detail = () => import('@/pages/detail')
 const login = () => import('@/pages/login')
@@ -39,6 +47,7 @@ const Notfont = () => import('@/pages/Notfont')
 const mall = () => import('@/pages/mall')
 const list = () => import('@/pages/list')
 const productlist = () => import('@/pages/productlist')
+>>>>>>> 557efd14c8a88648b1d7427f1094502775394876
 const register = () => import('@/pages/register')
 >>>>>>> 557efd14c8a88648b1d7427f1094502775394876
 
@@ -116,8 +125,8 @@ export default [{
   path: '/list/:id',
   name: 'list',
   components: {
-    default: list
-
+    default: list,
+    tabber: Tabbar
   }
 }, {
   path: '/login',

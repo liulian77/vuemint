@@ -32,7 +32,8 @@
                      @click.stop="addToCart({
                         id: curr.id,
                         title: curr.title,
-                        price: curr.price
+                        price: curr.price,
+                        img:curr.image,
                       })"
                     ></i>
                     </div>
@@ -58,10 +59,6 @@ export default {
         .then(resp => {
           if (resp.data.code === 200) {
             vm.products = resp.data.data.items.list
-<<<<<<< HEAD
-=======
-            console.log(vm.products[0].id)
->>>>>>> 557efd14c8a88648b1d7427f1094502775394876
           }
         })
     })
