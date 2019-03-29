@@ -22,7 +22,6 @@ const register = () => import('@/pages/register')
 export default [{
   path: '/',
   redirect: '/home'
-
 }, {
   path: '/home',
   isTabbar: true,

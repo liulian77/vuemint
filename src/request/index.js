@@ -29,6 +29,7 @@ export const getProducts = (tabid) => {
 export const getList = (id) => {
   return ajax.get(`/api/category/${id}/items?start=0&sort=0`)
 }
+
 // 获取商品详情
 export const getDetail = (id) => {
   return ajax.get(`/api/detail?id=${id}&normal=1&sa=`)
