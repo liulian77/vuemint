@@ -15,36 +15,7 @@ import store from './store'
 Vue.prototype.$ajax = ajax
 Vue.use(MintUI)
 
-// router.beforeEach((to, from, next) => {
-//   const firstLevelRoute = to.path.split('/')[1]
-//   switch (firstLevelRoute) {
-//     case 'home':
-
-//       break
-//     case 'mall':
-
-//       break
-//     case 'cart':
-
-//       break
-//     case 'mine':
-
-//       break
-//     default:
-
-//       break
-//   }
-
-//   console.log(to)
-//   console.log(store.getters.islogin)
-
-//   if (to.meta.isRequeires && store.getters.islogin) {
-//     next('/login')
-//   } else {
-//     // 如果没有权限 或者说有权限已经登录，就直接访问
-//     next()
-//   }
-// })
+Vue.config.productionTip = false
 
 Vue.mixin({
   filters: {
@@ -53,6 +24,24 @@ Vue.mixin({
     }
   }
 })
+router.beforeEach((to, from, next) => {
+  console.log(to)
+  console.log(from)
+  if (to.meta.isAuthRequired && !store.getters.isLogin) {
+    console.log(to)
+    next({
+      name: 'login',
+      params: {
+        // 这里的参数属于隐式传参，这样才能在登录成功之后返回到用户本身需要访问的页面，因为直接到Login里获取不到用户本身访问的路由，这是由于到了Login页面本来就已经重定向了
+        comeFrom: to.fullPath
+      }
+    })
+  } else {
+    // 如果没有权限 或者说有权限已经登录，就直接访问
+    next()
+  }
+})
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

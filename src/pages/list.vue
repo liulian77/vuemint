@@ -47,11 +47,19 @@
 </template>
 
 <script>
+import {
+  mapMutations
+} from 'vuex'
 export default {
   data () {
     return {
       products: []
     }
+  },
+  methods: {
+    ...mapMutations([
+      'addToCart'
+    ])
   },
   beforeRouteEnter (to, from, next) {
     next(vm => {

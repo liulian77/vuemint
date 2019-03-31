@@ -3,8 +3,8 @@
         <div class="header">
             <i class="iconfont icon-icon26"></i>
             <div class="login">
-                <router-link tag="span" to="/home">登录</router-link> /
-                <router-link tag="span" to="/home">注册</router-link>
+                <router-link tag="span" to="/login">登录</router-link> /
+                <router-link tag="span" to="/register">注册</router-link>
             </div>
         </div>
         <div class="mine-body">

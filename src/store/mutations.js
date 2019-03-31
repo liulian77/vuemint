@@ -1,12 +1,10 @@
-<<<<<<< HEAD
 import types from './types'
-export default{
-
-  // 只能在这里修改state
+export default {
+  // 只能在这里去修改state
   [types.deletCartItem] (state, id) {
     state.cart = state.cart.filter(item => item.id !== id)
   },
-  togochecked (state, id) {
+  [types.togochecked] (state, id) {
     state.cart = state.cart.map(item => {
       if (item.id === id) {
         item.checked = !item.checked
@@ -14,18 +12,7 @@ export default{
       return item
     })
   },
-
-  // handleRemove (state, count) {
-  //   console.log(state)
-  //   state.cart = state.cart.map(item => {
-  //     console.log(item)
-  //     if (item.id === count) {
-  //       item.count = item.count - 1
-  //     }
-  //     return item
-  //   })
-  // },
-  handleRemove (state, id) {
+  [types.handleRemove] (state, id) {
     state.cart = state.cart.map(item => {
       if (item.id === id && item.count !== 1) {
         item.count--
@@ -33,7 +20,7 @@ export default{
       return item
     })
   },
-  handleAdd (state, id) {
+  [types.handleAdd] (state, id) {
     state.cart = state.cart.map(item => {
       if (item.id === id && item.count !== 999) {
         item.count = item.count + 1
@@ -41,7 +28,7 @@ export default{
       return item
     })
   },
-  togoAllchecked (state, checked) {
+  [types.togoAllchecked] (state, checked) {
     console.log(state)
     // const CartLength = state.cart.length
     console.log(state.cart.length)
@@ -50,7 +37,7 @@ export default{
       return item
     })
   },
-  addToCart (state, iteminfo) {
+  [types.addToCart] (state, iteminfo) {
     console.log(iteminfo)
     const isInCart = state.cart.some(cartItem => cartItem.id === iteminfo.id)
     console.log(isInCart)
@@ -68,15 +55,27 @@ export default{
         count: 1
       })
     }
+  },
+  [types.detailAddCart] (state, iteminfo) {
+    console.log(iteminfo)
+    const isInCart = state.cart.some(cartItem => cartItem.id === iteminfo.id)
+    console.log(isInCart)
+    if (isInCart) {
+      state.cart = state.cart.map(item => {
+        if (item.id === iteminfo.id) {
+          item.count += 1
+        }
+        return item
+      })
+    } else {
+      state.cart.push({
+        ...iteminfo,
+        checked: false,
+        count: 1
+      })
+    }
+  },
+  updateUserInfo (state, userInfo) {
+    state.userInfo = userInfo
   }
-
-=======
-// import types from './types'
-// updataUser请求过去
-export default {
-// 更新用户信息
-  updateUserInfo (state, uesr) {
-    state.uesr = uesr
-  }
->>>>>>> 557efd14c8a88648b1d7427f1094502775394876
 }

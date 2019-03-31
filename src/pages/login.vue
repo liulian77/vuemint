@@ -1,8 +1,8 @@
 <template>
   <div class="logo">
     <div class="title">
-      <div class="close">X</div>
-      <div class="word">注册</div>
+      <div class="close" onclick="window.history.go(-1)">X</div>
+      <router-link tag='div' to="/register" class="word">注册</router-link>
     </div>
     <div class="logo-body">
       <img class="big-logo" src="../img/logo-big.png" alt>
@@ -19,7 +19,6 @@
       </div>
       <mt-button class="btnLogo" size="large" type="primary" @click="dologin">登录</mt-button>
       <div class="forget">忘记密码</div>
-      <div clss="islogin">{{islogin}}</div>
     </div>
     <div class="footer">
 
@@ -44,7 +43,31 @@ export default {
       password: ''
     }
   },
-
+  computed: {
+    ...mapGetters([
+      'isLogin'
+    ])
+  },
+  // beforeRouteEnter (to, from, next) {
+  //   next(vm => {
+  //     if (vm.isLogin) {
+  //       vm.$router.push('/mine')
+  //     }
+  //     if (this.isLogin) {
+  //       next('/mine')
+  //     }
+  //   })
+  // },
+  beforeRouteEnter (to, from, next) {
+    next(vm => {
+      if (vm.isLogin) {
+        vm.updateUserInfo({
+          displayName: '',
+          token: ''
+        })
+      }
+    })
+  },
   // beforeRouteEnter (to, from, next) {
   //   next(vm => {
   //     if (vm.islogin) {
@@ -57,15 +80,14 @@ export default {
   //   // }
   // },
   watch: {
-    islogin () {
-      if (this.islogin === true) {
-        this.$router.push('/main')
+    isLogin () {
+      if (this.isLogin === true) {
+        // 如果登录成功，就跳转， 获取全局导航守卫（@/main.js -> router.beforeEach里面）传递过来的参数，决定往哪儿跳
+        // 如果没有参数，就默认到 '/mine', 这种情况是由用户直接访问登录页造成的。
+        const { comeFrom = '/mine' } = this.$route.params
+        this.$router.push(comeFrom)
       }
     }
-  },
-  computed: {
-    ...mapGetters(['islogin'])
-
   },
   methods: {
 
@@ -107,6 +129,8 @@ body {
     .close {
       color: gray;
       line-height: 4rem;
+      margin-left: 1rem;
+      font-size: 2rm;
     }
     .word {
       color: #ff0055;
@@ -120,26 +144,28 @@ body {
       margin-left: 40%;
       margin-top: 3rem;
       width: 8rem;
+      height: 18%;
     }
     .name {
       height: 4rem;
       width: 95%;
-      padding-left: 14%;
-      margin-top: 5rem;
-
+      padding-left: 20%;
+      margin-top: 4.5rem;
+       position: relative;
       .icon {
         font-family: "icon";
-
+        position: absolute;
+        top: 1rem;
         font-size: 2.3rem;
       }
       .username {
         display: inline-block;
-        margin-left: 3rem;
-        height: 4rem;
+        margin-left: 4rem;
+        height: 3.6rem;
         outline: none;
         border: none;
         font-size: 1.5rem;
-        line-height: 4rem;
+        line-height: 3.6rem;
         border-bottom: 1px solid #eeeeee;
 
       }
@@ -147,17 +173,17 @@ body {
     .pwd {
       height: 4rem;
       width: 85%;
-        padding-left: 14%;
+      padding-left: 20%;
       margin-top: 2rem;
-
+      position: relative;
       .icon {
         font-family: "icon";
-
         font-size: 2.3rem;
+        position: absolute;
+        top: 1rem;
       }
       .password {
-        display: inline-block;
-        margin-left: 3rem;
+        margin-left: 4rem;
         height: 4rem;
         outline: none;
         border: none;
@@ -182,7 +208,7 @@ body {
       border: none;
       padding-left:2rem;
       font-size: 1.2rem;
-      margin-top: 3rem;
+      margin-top: 1rem;
     }
   }
   .footer {

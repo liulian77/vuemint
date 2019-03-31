@@ -19,10 +19,6 @@ export const bxbanner = () => {
 export const bxchange = () => {
   return ajax.get('/api/tab/3?start=0')
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> 557efd14c8a88648b1d7427f1094502775394876
 export const getCateNav = () => {
   return ajax.get('/api/tabs?sa=')
 }
@@ -32,10 +28,6 @@ export const getProducts = (tabid) => {
 export const getList = (id) => {
   return ajax.get(`/api/category/${id}/items?start=0&sort=0`)
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> 557efd14c8a88648b1d7427f1094502775394876
 // 获取商品详情
 export const getDetail = (id) => {
   return ajax.get(`/api/detail?id=${id}&normal=1&sa=`)
@@ -45,5 +37,5 @@ export const getDetail = (id) => {
 //   return ajax.post(`http://rap2api.taobao.org/app/mock/163697/login`, loginInfo)
 // }
 export const postLogin = (loginInfo) => {
-  return ajax.post('http://rap2api.taobao.org/app/mock/163597/login', loginInfo)
+  return ajax.post('/app/mock/163597/login', loginInfo)
 }

@@ -2,7 +2,7 @@
   <div>
 
           <div class="register">
-            <span class="exit">&lt;</span>
+            <router-link tag="span" to="/login" class="exit">&lt;</router-link>
              <span class="title">注册</span>
           </div>
           <form class="register-name">

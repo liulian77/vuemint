@@ -41,7 +41,7 @@ font-size: 62.5%;
 }
 .bx-cart{
   position: absolute;
-  right: 0;
+  right:1.3rem;
   top: -1rem;
   background-color: red;
   padding:0 3px;
@@ -61,7 +61,7 @@ font-size: 62.5%;
     &item {
       position: relative;
         &.current{
-          background-color: #f7e7e7;
+           background-color: #f7e7e7;
           color:  #e28080;
         }
       flex: 1;

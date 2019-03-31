@@ -2,7 +2,7 @@
 <template>
   <div class="detail">
     <div class="detail-title">
-     <router-link to="/mall" tag="div" class="detail-icon">&lt;</router-link>
+     <div onclick="window.history.go(-1)" class="detail-icon">&lt;</div>
       <div class="biaoti">{{detail.detail.title}}</div>
       <div class="detail-icon">&#xe61d;</div>
     </div>
@@ -176,23 +176,25 @@
     </div>
     <div class="detail-footer">
       <div>
-        <i>&#xe606;</i>
+        <router-link tag="i" to="/cart">&#xe606; <span class="detail-count">{{cartTotalCount}}</span></router-link>
       </div>
-      <router-link  :to="{
-                name:'cart',
-                params:{
-                    id:detail.detail.id,
-                    title:detail.detail.shop.title,
-                    amount:1,
-                    price:detail.detail.price,
-                }
-            }"
-      id="addtocar">加入购物车</router-link>
+      <span
+      id="addtocar"
+      @click="detailAddCart({
+                        id: detail.detail.id,
+                        title: detail.detail.title,
+                        price: detail.detail.price,
+                        img:detail.detail.image,
+                      })"
+      >加入购物车</span>
     </div>
   </div>
 </template>
 
 <script>
+import {
+  mapMutations, mapGetters
+} from 'vuex'
 export default {
   data () {
     return {
@@ -200,7 +202,16 @@ export default {
       banners: []
     }
   },
-
+  methods: {
+    ...mapMutations([
+      'detailAddCart'
+    ])
+  },
+  computed: {
+    ...mapGetters([
+      'cartTotalCount'
+    ])
+  },
   beforeRouteEnter (to, from, next) {
     next(vm => {
       vm.$ajax.getDetail(to.params.id).then(resp => {
@@ -226,38 +237,32 @@ export default {
   overflow: hidden;
 }
 .detail-title {
-  height: 3.1rem;
+  height: 4rem;
+  line-height:4rem;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  div {
-    height: 2.8rem;
-    line-height: 3.2rem;
-    font-size: 1.5rem;
-  }
+   font-size: 1.5rem;
   .biaoti {
     width: 60%;
     height: 100%;
-    margin-left: 10%;
+    line-height: 4rem;
+    margin-left: 5%;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }
   .detail-icon {
     font-family: "iconfont";
+     font-size: 2rem;
   }
 }
 .detali-body {
   flex: 1;
   overflow-x: hidden;
   .img {
-    height: 60%;
-
-    width: 100%;
-    img {
-      width: 100%;
-      height: 100%;
-    }
+    height:70%;
+    margin: 1rem auto;
   }
   .miaoshu {
     height: 4rem;
@@ -316,6 +321,7 @@ export default {
     height: 4.5rem;
     line-height: rem;
     font-size: 1.3rem;
+    padding-top:0.8rem;
     span {
       display: block;
       float: left;
@@ -326,7 +332,6 @@ export default {
       background: #e6618e;
       font-size: 1.3rem;
       color: #ffffff;
-      margin-top: 0.5rem;
       margin-right: 1rem;
     }
     i {
@@ -506,12 +511,28 @@ export default {
   flex-direction: row;
   justify-content: space-around;
   font-size: 1.3rem;
+   div{
+    position: relative;
+   }
   div i {
     font-family: "iconfont";
     font-size: 2.5rem !important;
     color: #e6618e;
-  }
 
+  }
+.detail-count{
+   position: absolute;
+   text-align: center;
+  right:-1.8rem;
+  top: -1rem;
+  background-color: #e6618e;
+  height: 2rem;
+  font-size: 1.5rem;;
+  line-height: 2rem;
+  color: white;
+  border-radius: 9px;
+  min-width: 2rem;;
+}
   #addtocar {
     height: 2.6rem;
     width: 30%;

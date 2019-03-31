@@ -1,17 +1,19 @@
 <template>
   <div class="cart">
-
-    <mt-header title="购物车">
-      <router-link to="/" slot="left">
+     <!-- <input type=button value=后退 onclick="window.history.go(-1)"> -->
+    <!-- <mt-header title="购物车">
         <mt-button icon="back"></mt-button>
-      </router-link>
-    </mt-header>
+    </mt-header> -->
+    <div class="head">
+        <i class="iconfont icon-fanhui" onclick="window.history.go(-1)"></i>
+        购物车
+    </div>
     <div class="bxzy_box">
       <div class="bxzy">白熊自营</div>
     </div>
     <div class="noshop"  v-if="cart.length === 0">
 <p>你还没有商品哦</p>
-<router-link to="home" class="gotoshop">快去逛逛吧</router-link>
+<router-link to="/mall" class="gotoshop">快去逛逛吧</router-link>
 </div>
     <div class="bxzy_box_shop" >
 
@@ -120,10 +122,9 @@ export default {
 </script>
 <style>
 .cart {
-
-  background: #cccccc;
+  background: #e9e4e4;
 }
-.mint-header {
+/* .mint-header {
   width: 100%;
   text-align: center;
   height: 5rem;
@@ -132,12 +133,30 @@ export default {
   font-size: 2.5rem;
   background-color: #ffffff;
   color: black;
+} */
+.head{
+   background-color: #ffffff;
+    height: 4rem;
+    line-height: 4rem;
+    border-bottom: 1px solid #dedede;
+    position: relative;
+    font-size: 1.8rem;
+  text-align: center;
 }
+.fanhui-btn{
+  background-color: #ffffff;
+  border: 1px solid red;
+}
+.icon-fanhui{
+        position: absolute;
+        left:0;
+        font-size: 2.5rem;
+    }
 .bxzy_box {
   width: 100%;
   height: 3rem;
   background-color: #ffffff;
-  margin-top: 1.5rem;
+  margin-top: 1rem;
   border-top: 1px solid #cccccc;
   border-bottom: 1px solid #efefef;
   font-size: 1.5rem;
