@@ -261,8 +261,13 @@ export default {
   flex: 1;
   overflow-x: hidden;
   .img {
-    height:70%;
-    margin: 1rem auto;
+    height:80%;
+    width:100%;
+    margin-bottom:1rem;
+    img{
+      height:100%;
+       width:100%;
+    }
   }
   .miaoshu {
     height: 4rem;
