@@ -19,8 +19,8 @@ const Cart = () =>
     import('@/pages/cart')
 const Main = () =>
     import('@/pages/mine')
-const Notfont = () =>
-    import('@/pages/Notfont')
+const notfont = () =>
+    import('@/pages/notfont')
 const mall = () =>
     import('@/pages/mall')
 const list = () =>
@@ -67,7 +67,7 @@ export default [{
 }, {
   path: '/404',
   components: {
-    default: Notfont,
+    default: notfont,
     header: Header
   }
 }, {
