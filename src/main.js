@@ -25,10 +25,7 @@ Vue.mixin({
   }
 })
 router.beforeEach((to, from, next) => {
-  console.log(to)
-  console.log(from)
   if (to.meta.isAuthRequired && !store.getters.isLogin) {
-    console.log(to)
     next({
       name: 'login',
       params: {

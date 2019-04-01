@@ -46,9 +46,9 @@
     >{{isAllChecked ? '取消全选':"全选"}} <span><b>免邮</b>本单已免运费</span></div>
       <div class="gobuy" v-if="cart.length !== 0">
        <p>总金额: <span>￥{{cartCheckedPrice.toFixed(2)}}</span></p>
-       <div class="gobuy_button">
+       <router-link class="gobuy_button" tag="div" to="/mine">
  结算
-       </div>
+       </router-link>
       </div>
     <div class="buttom_link">
 

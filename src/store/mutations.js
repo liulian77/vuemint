@@ -29,18 +29,13 @@ export default {
     })
   },
   [types.togoAllchecked] (state, checked) {
-    console.log(state)
-    // const CartLength = state.cart.length
-    console.log(state.cart.length)
     state.cart = state.cart.map(item => {
       item.checked = checked
       return item
     })
   },
   [types.addToCart] (state, iteminfo) {
-    console.log(iteminfo)
     const isInCart = state.cart.some(cartItem => cartItem.id === iteminfo.id)
-    console.log(isInCart)
     if (isInCart) {
       state.cart = state.cart.map(item => {
         if (item.id === iteminfo.id) {
@@ -57,9 +52,7 @@ export default {
     }
   },
   [types.detailAddCart] (state, iteminfo) {
-    console.log(iteminfo)
     const isInCart = state.cart.some(cartItem => cartItem.id === iteminfo.id)
-    console.log(isInCart)
     if (isInCart) {
       state.cart = state.cart.map(item => {
         if (item.id === iteminfo.id) {

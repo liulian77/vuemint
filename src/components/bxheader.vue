@@ -17,7 +17,7 @@ html{
 font-size: 62.5%;
 }
 .bxheader{
-    height:10%;
+    height:7.8%;
     line-height: 45px;
     display: flex;
     width: 100%;
@@ -35,7 +35,7 @@ font-size: 62.5%;
     height: 2rem;
     background: #eceaea;
     margin-left: 0.5rem;
-    margin-top:1.2rem;
+    margin-top:1rem;
     text-decoration: none;
     border-radius: 0.5rem;
 }

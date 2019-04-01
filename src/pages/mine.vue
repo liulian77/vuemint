@@ -95,7 +95,7 @@ export default {
     flex-direction: column;
     .header{
         width: 100%;
-        height:20%;
+        height:17%;
         background-color: rgb(235, 190, 196);
         line-height: 8.5rem;
         font-size: 1.6rem;

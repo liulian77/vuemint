@@ -3,21 +3,21 @@
   <div class="detail">
     <div class="detail-title">
      <div onclick="window.history.go(-1)" class="detail-icon">&lt;</div>
-      <div class="biaoti">{{detail.detail.title}}</div>
+      <div class="biaoti">{{detail.title}}</div>
       <div class="detail-icon">&#xe61d;</div>
     </div>
     <div class="detali-body">
       <div class="img">
-        <img :src="detail.detail.image" alt>
+        <img :src="detail.image" alt>
       </div>
       <div class="miaoshu">
-        <div class="box-word">{{detail.detail.title}}</div>
+        <div class="box-word">{{detail.title}}</div>
         <div class="detail-icon">&#xe607;</div>
       </div>
       <div class="price">
         <span>￥</span>
-        <i>{{detail.detail.price}}</i>
-        <em>{{detail.detail.originPrice}}</em>
+        <i>{{detail.price}}</i>
+        <em>{{detail.originPrice}}</em>
       </div>
       <div class="flower">
         <div>
@@ -25,7 +25,7 @@
         </div>
         <div>
           <span>花粉</span>购买最多获得
-          <i>{{detail.detail.price}}</i>个花粉
+          <i>{{detail.price}}</i>个花粉
         </div>
       </div>
       <div class="throung"></div>
@@ -49,19 +49,19 @@
         <div class="ww-box1">
           <div class="line1">
             <div class="xiao-product">商品品牌：</div>
-            <div class="xiao-product1">{{detail.detail.shop.title}}</div>
+            <div class="xiao-product1">{{shop.title}}</div>
           </div>
           <div class="line1">
             <div class="xiao-product">商品品牌：</div>
-            <div class="xiao-product1">{{detail.detail.shop.title}}</div>
+            <div class="xiao-product1">{{shop.title}}</div>
           </div>
           <div class="line1">
             <div class="xiao-product">评价</div>
-            <div class="xiao-product1">{{detail.detail.shop.itemScore}}</div>
+            <div class="xiao-product1">{{shop.itemScore}}</div>
           </div>
           <div class="line1">
             <div class="xiao-product">创建时间：</div>
-            <div class="xiao-product1">{{detail.detail.shop.updateTime}}</div>
+            <div class="xiao-product1">{{shop.updateTime}}</div>
           </div>
           <div class="line1">
             <div class="xiao-product">规格：</div>
@@ -77,7 +77,7 @@
           </div>
           <div class="line1">
             <div class="xiao-product">货号：</div>
-            <div class="xiao-product1">{{detail.detail.id}}</div>
+            <div class="xiao-product1">{{detail.id}}</div>
           </div>
           <router-link to="/" class="more">查看玉兰油更多商品</router-link>
         </div>
@@ -170,7 +170,7 @@
         </div>
       </div>
       <div class="scorll">上拉查看图文详情</div>
-      <div class="detail-pic" v-for="banner in banners" :key="banner.id">
+      <div class="detail-pic" v-for="banner in detail.photos" :key="banner.id">
         <img :src="banner.url" alt>
       </div>
     </div>
@@ -181,10 +181,10 @@
       <span
       id="addtocar"
       @click="detailAddCart({
-                        id: detail.detail.id,
-                        title: detail.detail.title,
-                        price: detail.detail.price,
-                        img:detail.detail.image,
+                         id:detail.id,
+                        title: detail.title,
+                        price: detail.price,
+                        img:detail.image,
                       })"
       >加入购物车</span>
     </div>
@@ -199,7 +199,7 @@ export default {
   data () {
     return {
       detail: {},
-      banners: []
+      shop: {}
     }
   },
   methods: {
@@ -216,12 +216,8 @@ export default {
     next(vm => {
       vm.$ajax.getDetail(to.params.id).then(resp => {
         if (resp.data.code === 200) {
-          vm.detail = resp.data.data
-          vm.banners = vm.detail.detail.photos
-          // console.log(resp)
-
-          // console.log(vm.detail)
-          console.log(vm.detail.detail.id)
+          vm.detail = resp.data.data.detail
+          vm.shop = resp.data.data.shop
         }
       })
     })
@@ -261,7 +257,7 @@ export default {
   flex: 1;
   overflow-x: hidden;
   .img {
-    height:80%;
+    height:70%;
     width:100%;
     margin-bottom:1rem;
     img{

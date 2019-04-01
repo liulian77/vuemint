@@ -52,7 +52,6 @@ export default {
     this.$nextTick(() => {
       this.$ajax.getProducts(this.$route.params.id)
         .then(resp => {
-          console.log(this.index)
           if (resp.data.code === 200) {
             this.products = resp.data.data.categories.filter(item => item.title !== '本周上新')
           }
