@@ -327,6 +327,9 @@ img {
   height: 100%;
   width: 100%;
 }
+.mint-swipe-items-wrap{
+  height:15rem;
+}
 .bxnav {
   height: 14rem;
   width: 100%;
